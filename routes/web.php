@@ -33,6 +33,7 @@ Route::resource("/test-orientation",OrientationController::class)->middleware(['
 Route::resource("/contact",ContactController::class);
 Route::resource("/forum",ForumController::class)->middleware(['auth']);
 
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

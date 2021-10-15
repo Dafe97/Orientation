@@ -1,17 +1,6 @@
    @if (Route::has('login'))
        @auth
            <div id="auth" >
-                  {{-- <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                  @csrf
-
-                  <a href="route('logout')"
-                          onclick="event.preventDefault();
-                                      this.closest('form').submit();">
-                      {{ __('Log Out') }}
-                  </a>
-              </form> --}}
-              <!-- user -->
                   <div >
                          <!-- Avatar -->
                          <a
@@ -53,13 +42,31 @@
                   </div>
            </div>
         @else
-          <div>
-                <a class="btn btn-primary mx-2 btn-sm"  href="{{ route('login') }}"  >se connecter</a>
-                @if (Route::has('register'))
-                    <a class="btn btn-success btn-sm"  href="{{ route('register') }}" >s'inscrir</a>
-                @endif
-          </div>
+            <nav id="navbar" class="navbar">
+               <ul>
+                    <li>
+                        <a class="nav-link scrollto  button-79"  href="{{ route('login') }}"  >se connecter</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li>
+                            <a class="nav-link scrollto button-79"  href="{{ route('register') }}" >s'inscrir</a>
+                        </li>
+                    @endif
+               </ul>
+               <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+      
        @endauth
    @endif
      
  
+   {{-- <nav id="navbar" class="navbar">
+    <ul>
+      <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+      <li><a class="nav-link scrollto" href="#about">About</a></li>
+      <li><a class="nav-link scrollto" href="#services">Services</a></li>
+      <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+      <li><a class="nav-link scrollto" href="#team">Team</a></li>
+    </ul>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+  </nav> --}}
