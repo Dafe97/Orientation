@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use  App\Models\University;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages/homes/index');
+        $universitys = University::All();
+        return view('pages.homes.index',compact("universitys"));
     }
 }

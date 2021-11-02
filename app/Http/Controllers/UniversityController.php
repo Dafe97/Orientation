@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\ResizeController;
+use App\Models\Faculty;
 use  App\Models\University;
+use FFI;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UniversityController extends Controller
 {
@@ -66,7 +69,16 @@ class UniversityController extends Controller
      */
     public function show($id)
     {
-        //
+        $universitys =  University::findOrFail($id);
+        $training = DB::table("unblocks")->where("levels","<>", "dut")->get();
+        $formations = DB::table("faculties")
+             ->join('universities', 'faculties.uni_id', '=', 'universities.id_uni')
+             ->join('unblocks', 'faculties.unblocks_id', '=', 'unblocks.id_unblocks')
+             ->select('unblocks.*',"faculties.uni_id")
+             ->where('faculties.uni_id',"=", $universitys->id_uni)
+             ->get();
+          $counter = 1;   
+        return view("pages/university/show",compact("universitys","formations","counter","training"));
     }
 
     /**

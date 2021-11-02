@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Unblock extends Model
 {
     use HasFactory;
+    protected $primaryKey = "id_unblocks";
 }

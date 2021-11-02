@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Sector;
 use Illuminate\Http\Request;
 
 class OrientationController extends Controller
@@ -13,6 +15,7 @@ class OrientationController extends Controller
      */
     public function index()
     {
+        Sector::All();
         return view('pages/test/index');
     }
 
@@ -45,7 +48,8 @@ class OrientationController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('pages/test/show',$id);
+       
     }
 
     /**

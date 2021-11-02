@@ -388,14 +388,23 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
-  width: 100%;
-  height: calc(100vh - 70px);
-  background: url("../img/hero-bg.jpg") center center;
-  background-size: cover;
-  position: relative;
+.img {
+  background: url("../img/etudiant.jpg") center center;
   margin-top: 70px;
   padding: 0;
+  background-size: cover;
+  height: calc(100vh - 70px);
+}
+.img-university{
+  background: url("../img/graduation.png") center center no-repeat;
+  margin-top: 70px;
+  background-size:  100% 60%;
+  padding: 0;
+  height: calc(90vh - 100px);
+}
+#hero {
+  width: 100%;
+  position: relative;
 }
 #hero:before {
   content: "";
@@ -662,47 +671,6 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-#services {
-  position: relative;
-}
-
-.services-title {
-  text-align: center;
-  padding-bottom: 30px;
-  position: relative;
-}
-.services-title h2 {
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
-}.services-title h2 {
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
-}.services-title h2 {
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
-}
-.services-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: #e03a3c;
-  bottom: 0;
-  left: calc(50% - 25px);
-}
 .services .icon-box {
   padding: 30px;
   position: relative;
@@ -712,14 +680,24 @@ section {
   transition: all 0.3s ease-in-out;
   border-radius: 15px;
   text-align: center;
+  border-bottom: 3px solid #fff;
 }
 .services .icon-box:hover {
-  box-shadow: 0 2px 29px 0 rgba(37, 37, 37, 0.1);
+  box-shadow: 0 2px 29px 0 rgba(37, 37, 37, 0.2);
 }
-.services .icon i {
-  font-size: 48px;
-  line-height: 1;
-  margin-bottom: 15px;
+.services .icon  {
+  background-color:#1bac91;
+  padding:15px; 
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+}
+.services .icon-box button{
+  position: absolute;
+  bottom: -5px;
+  left: 30px;
+  background-color:#1bac91;color:white;
+  margin-bottom: 10px;
 }
 .services .title {
   font-weight: 700;
@@ -732,7 +710,7 @@ section {
 .services .description {
   font-size: 15px;
   line-height: 28px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 .services .icon-box-pink .icon i {
   color: #ff689b;
@@ -1216,16 +1194,16 @@ section {
   background: #1bac91;
   color: #fff;
 }
-.contact .php-email-form {
+.contact  {
   width: 100%;
   padding: 30px;
   background: #fff;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
-.contact .php-email-form .form-group {
+.contact  .form-group {
   padding-bottom: 8px;
 }
-.contact .php-email-form .error-message {
+.contact  .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1233,10 +1211,10 @@ section {
   padding: 15px;
   font-weight: 600;
 }
-.contact .php-email-form .error-message br + br {
+.contact  .error-message br + br {
   margin-top: 25px;
 }
-.contact .php-email-form .sent-message {
+.contact  .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1244,13 +1222,14 @@ section {
   padding: 15px;
   font-weight: 600;
 }
-.contact .php-email-form .loading {
+
+.contact  .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
-.contact .php-email-form .loading:before {
+.contact  .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1262,18 +1241,18 @@ section {
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
 }
-.contact .php-email-form input, .contact .php-email-form textarea {
+.contact  input, .contact  textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
-.contact .php-email-form input {
+.contact  input {
   height: 44px;
 }
-.contact .php-email-form textarea {
+.contact  textarea {
   padding: 10px 12px;
 }
-.contact .php-email-form button[type=submit] {
+.contact  button[type=submit] {
   background: #1bac91;
   border: 0;
   padding: 10px 24px;
@@ -1281,7 +1260,7 @@ section {
   transition: 0.4s;
   border-radius: 4px;
 }
-.contact .php-email-form button[type=submit]:hover {
+.contact  button[type=submit]:hover {
   background: #22d8b6;
 }
 @-webkit-keyframes animate-loading {
@@ -1299,64 +1278,6 @@ section {
   100% {
     transform: rotate(360deg);
   }
-}
-
-/*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
-.section-services {
-  padding: 120px 0;
-  color: #fff;
-}
-
-.section-services:before {
-  content: "";
-  background: #1b1b1b;
-  position: absolute;
-  bottom: 60px;
-  top: 60px;
-
-  left: 0;
-  right: 0;
-  transform: skewY(-3deg);
-}
-
-.services .icon-box {
-  margin-bottom: 20px;
-  padding: 30px;
-  border-radius: 6px;
-  background: #252525;
-  transition: 0.3s;
-}
-.services .icon-box:hover {
-  background: #2b2b2b;
-}
-.services .icon-box i {
-  float: left;
-  color: #e03a3c;
-  font-size: 40px;
-  line-height: 0;
-}
-.services .icon-box h4 {
-  margin-left: 70px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-.services .icon-box h4 a {
-  color: #fff;
-  transition: 0.3s;
-}
-.services .icon-box h4 a:hover {
-  text-decoration: underline;
-}
-.services .icon-box .icon-box:hover h4 a {
-  color: #e03a3c;
-}
-.services .icon-box p {
-  margin-left: 70px;
-  line-height: 24px;
-  font-size: 14px;
 }
 
 /*--------------------------------------------------------------

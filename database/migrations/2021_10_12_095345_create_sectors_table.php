@@ -15,7 +15,9 @@ class CreateSectorsTable extends Migration
     {
         Schema::create('sectors', function (Blueprint $table) {
             $table->id('id_sectors');
-            $table->string('contents');
+            $table->string('contents')->unique();
+            $table->string('description')->nullable();
+            $table->enum("type",["Bac Général","Bac Technique"]);
             $table->timestamps();
         });
     }

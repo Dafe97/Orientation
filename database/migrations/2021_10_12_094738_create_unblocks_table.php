@@ -15,7 +15,10 @@ class CreateUnblocksTable extends Migration
     {
         Schema::create('unblocks', function (Blueprint $table) {
             $table->id("id_unblocks");
-            $table->string("contents");
+            $table->string("title",20);
+            $table->string("description",50);
+            $table->string("contents")->nullable();
+            $table->string("start",20);
             $table->timestamps();
         });
     }

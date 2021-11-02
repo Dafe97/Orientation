@@ -1,5 +1,5 @@
  <!-- ======= Hero Section ======= -->
-   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+   <section id="hero" class="img d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Welcome Bienvenue</h1>
       <h2>Orientation néo-bacheliers vous souhaite la bienvenue  </h2>

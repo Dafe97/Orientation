@@ -17,8 +17,8 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                      <router-link to="/home" class="nav-link active">Accueil</router-link>
-                      <router-link to="/tasks" class="nav-link " >task</router-link>
+                      <a href="#" class="nav-link active">Accueil</a>
+                      <a href="#" class="nav-link " >task</a>
                       <a class="nav-link" href="#">Pricing</a>
                       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </div>

@@ -21,14 +21,14 @@ use TCG\Voyager\Facades\Voyager;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::resource("/",HomeController::class);
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
-// });
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 
-
-Route::resource("university",UniversityController::class)->middleware(['auth']);
+Route::resource("/university",UniversityController::class)->middleware(['auth']);
 Route::resource("/test-orientation",OrientationController::class)->middleware(['auth']);
 Route::resource("/contact",ContactController::class);
 Route::resource("/forum",ForumController::class)->middleware(['auth']);

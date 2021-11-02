@@ -17,6 +17,7 @@ class CreateUniversitiesTable extends Migration
             $table->id("id_uni");
             $table->string('title');
             $table->string('contents');
+            $table->string('href');
             $table->string('img');
             $table->timestamps();
         });

@@ -13,7 +13,7 @@
             </figure>
           </div>
           <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0">
-            <h3 data-aos="fade-up"> Nous sommes là pour vous orienter</h3>
+            <h3 data-aos="fade-up">Nous sommes là pour vous orienter </h3>
             <p data-aos="fade-up">
               Notre équipe est à votre écoute pour vous aider à choisir la formation qu’il vous faut.            </p>
             <div class="icon-box" data-aos="fade-up">
@@ -41,54 +41,7 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Steps Section ======= -->
-    <section id="steps" class="steps section-bg">
-      <div class="container">
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in">
-            <span>01</span>
-            <h4>Lorem Ipsum</h4>
-            <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="100">
-            <span>02</span>
-            <h4>Repellat Nihil</h4>
-            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="200">
-            <span>03</span>
-            <h4> Ad ad velit qui</h4>
-            <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="300">
-            <span>04</span>
-            <h4>Repellendus molestiae</h4>
-            <p>Inventore quo sint a sint rerum. Distinctio blanditiis deserunt quod soluta quod nam mider lando casa</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="400">
-            <span>05</span>
-            <h4>Sapiente Magnam</h4>
-            <p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="500">
-            <span>06</span>
-            <h4>Facilis Impedit</h4>
-            <p>Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis sequi</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Steps Section -->
-
-    <!-- ======= Features Section ======= -->
+    {{-- <!-- ======= Features Section ======= -->
     <section id="features" class="features">
       <div class="container">
 
@@ -99,9 +52,7 @@
                 <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
                   <h4>Test d'orientation</h4>
                   <p>
-                    Pour mieux vous orienter et trouver le secteur qui 
-                    vous correspond le mieux,
-                    faite le test d'orientation gratuits 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aspernatur optio perspiciatis asperiores, nihil officiis aperiam ab blanditiis quaerat eum maiores atque dicta soluta pariatur libero, labore sit quasi laborum?
                   </p>
                 </a>
               </li>
@@ -131,44 +82,55 @@
                 <figure>
                   <img src="assets/img/features-1.png" alt="" class="img-fluid">
                 </figure>
-                <a href="{{route("register")}}">Veuillez-vous inscrire pour faire votre test d'orientation</a>
               </div>
               <div class="tab-pane" id="tab-2">
                 <figure>
                   <img src="assets/img/features-2.png" alt="" class="img-fluid">
                 </figure>
-                <a href="{{route("register")}}">Veuillez-vous inscrire pour poster votre forum</a>
               </div>
               <div class="tab-pane" id="tab-3">
                 <figure>
                   <img src="assets/img/features-3.png" alt="" class="img-fluid">
                 </figure>
-                <a href="{{route("register")}}">Veuillez-vous inscrire pour voir la liste des formations</a>
               </div>
               <div class="tab-pane" id="tab-4">
                 <figure>
                   <img src="assets/img/features-4.png" alt="" class="img-fluid">
                 </figure>
-                <a href="{{route("register")}}">Veuillez-vous inscrire pour voir la liste des Université</a>
-
               </div>
             </div>
           </div>
         </div>
 
       </div>
-    </section><!-- End Features Section -->
-
-   
+    </section><!-- End Features Section --> --}}
+      <!-- =======  university ======= -->
+    <section>
+      <div class="container">
+          <div class="row">
+            @foreach ($universitys as $university)
+                <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" >
+                  <div class="card mb-2 position-relative" style="width: 18rem; height:400px;">
+                    <img src="{{asset("storage/".$university->img)}}" class="card-img-top" alt="..."style ="height:200px">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$university->title}}</h5>
+                      <p class="card-text">{{$university->contents}}</p>
+                      <a href="{{route("university.show",$university)}}" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle">+ Voir plus</a>
+                    </div>
+                  </div>
+                </div>
+            @endforeach
+        </div>
+     </section>
+     <!-- =======  End university ======= -->
+    
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2> témoignage</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Nos utilisateur témoignent</h2>
         </div>
-
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
 
@@ -246,10 +208,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Nous contacter</h2>
         </div>
-
         <div class="row no-gutters justify-content-center" data-aos="fade-up">
 
             <div class="col-lg-5 d-flex align-items-stretch">
@@ -277,27 +237,25 @@
             </div>
 
             <div class="col-lg-7 d-flex align-items-stretch"> 
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <form action="{{route('contact.store')}}" method="post" role="form" style="width:80%" >
+                @csrf
+                @if (!auth()->check())
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                    </div>
                   </div>
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                  </div>
-                </div>
+                @endif
                 <div class="form-group mt-3">
                   <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                 </div>
                 <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                  <textarea class="form-control" name="contents" rows="5" placeholder="Message" required></textarea>
                 </div>
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-                <div class="text-right"><button type="submit" >Send Message</button></div>
+                <div class="text-right"><button type="submit" class="submit-contact">Send Message</button></div>
               </form>
             </div>
 
