@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\ResizeController;
 use App\Models\Faculty;
 use  App\Models\University;
+use  App\Models\Unblock;
 use FFI;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -67,6 +68,19 @@ class UniversityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function sector($id){
+        $faculty =  Unblock::findOrFail($id);
+        $universitys =  University::findOrFail($id);
+        $training = DB::table("unblocks")->where("start", $faculty->start)->get();
+        $formations = DB::table("faculties")
+             ->join('universities', 'faculties.uni_id', '=', 'universities.id_uni')
+             ->join('unblocks', 'faculties.unblocks_id', '=', 'unblocks.id_unblocks')
+             ->select('unblocks.*',"faculties.uni_id")
+             ->where('faculties.uni_id',"=", $universitys->id_uni)
+             ->get();
+        return view("pages/university/sector",compact("faculty","formations","training"));
+
+    }
     public function show($id)
     {
         $universitys =  University::findOrFail($id);

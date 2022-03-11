@@ -1,27 +1,42 @@
 @extends('layouts/app')
 @section('content')
     <!-- ======= Team Section ======= -->
-    
-    <section id="team" class="team mt-4">
+    <section class="breadcrumbs">
         <div class="container">
   
-          <div class="section-title" data-aos="fade-up">
-            <h2>Les Universités</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptas est optio perferendis expedita quidem incidunt deserunt quo excepturi voluptates modi repellat aperiam illum, molestiae animi, earum impedit fuga quaerat?</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Les Universités </h2>
           </div>
-          <div class="row">
-              @foreach ($universitys as $university)
-                  <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" >
-                    <div class="card mb-2 position-relative" style="width: 18rem; height:400px;">
-                      <img src="{{asset("storage/".$university->img)}}" class="card-img-top" alt="..."style ="height:200px">
-                      <div class="card-body">
-                        <h5 class="card-title">{{$university->title}}</h5>
-                        <p class="card-text">{{$university->contents}}</p>
-                        <a href="{{$university->href}}" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle">+ Voir plus</a>
-                      </div>
-                    </div>
-                  </div>
-              @endforeach
-          </div>
+  
+        </div>
+      </section><!-- Breadcrumbs Section -->
+    <section class="mt-0 pt-0">
+        <div class="container mt-0">
+          <div id="cards_landscape_wrap-2">
+              <div class="container">
+                  <div class="row ">
+                      @foreach ($universitys as $university)
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                            <a href="{{route('university.show',$university)}}">
+                                <div class="card-flyer">
+                                    <div class="text-box">
+                                        <div class="image-box">
+                                            <img src="{{asset('storage/'.$university->img)}}" alt="" />
+                                        </div>
+                                        <div class="text-container">
+                                            <h6>{{$university->title}}</h6>
+                                            <p>
+                                              {{$university->contents}}
+                                            </p>
+                                            <a href="{{route('university.show',$university)}}" class="btn btn-primary">Voir plus</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                      @endforeach
+                   </div>
+              </div>
+         </div>
       </section><!-- End Team Section -->
 @endsection

@@ -1,0 +1,267 @@
+
+/*------------------------------------------------------------
+# Login
+--------------------------------------------------------------*/
+* {
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: serif sans-serif;
+}
+.header{
+    background: #1bac91;color:white;
+    border-radius: 3px;
+    padding-top: 3px;
+}
+.container-auth{
+    position: relative;
+    background: #fafaf8;
+}
+.container-auth .banniere{
+    position: fixed;
+    right: 0px;
+    width: 50%;
+    height: 100vh;
+    background-image: url("../img/etudiant.jpg");
+    background-size: cover;
+}
+
+.container-auth .form{
+    width: 50%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    min-height: 100vh;
+}
+.container-auth .form .connexion .header{
+    margin-bottom: 50px;
+}
+.redirect{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.3em;
+}
+.container-auth .form .connexion{
+    position: absolute;
+    width: 100%;
+    top: 150px;
+}
+@media (max-width: 991px) {
+    
+    .container-auth .banniere{
+        display: none;
+    }
+    .container-auth .form{
+        width: 100%;
+    }
+    .container-auth .form .connexion{
+        position: relative;
+        width: 80%;
+        margin: auto;
+  }
+    .redirect{
+        
+        font-size: 1.3em;
+    }
+}
+@media screen and (max-width: 1000px)  and (min-width:768px ){
+    .redirect{
+        font-size: 1.1em;
+    }
+}
+@media screen and (max-width: 500px){
+   .redirect{
+        font-size: 1.1em;
+    }
+}
+/*------------------------------------------------------------
+# LOGO
+--------------------------------------------------------------*/
+.logo{
+  height: 70px;
+  transition: all 0.5s;
+  z-index: 997;
+  background: #000;
+  z-index: 1030;
+  padding-left: 5px;
+}
+.logo h1 {
+  display: inline-block;
+  position: relative;
+  font-family: 'Akaya Kanadaka', cursive;
+  font-size: 30px;
+  margin: 0;
+  padding: 6px 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.logo h1::before{
+  position: absolute;
+  bottom: 6px;
+  left: 0px;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: #1bac91;
+}
+.logo h1 a,
+.logo h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px;
+}
+@media (max-width: 992px) {
+  .logo h1 {
+      font-size: 20px;
+  }
+}
+/*------------------------------------------------------------
+# Register
+--------------------------------------------------------------*/
+.register  {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    padding: 10px;
+}
+.register .container{
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+}
+.register  .card{
+    padding: 30px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    width: 100%;
+    border: none;
+  }
+  .register .card .header h1{
+      padding: 5px;
+  }
+  .card-form p{
+     text-align: center;
+  }
+  .register .stape  div{
+      margin-left: 10px;
+  }
+  .register .stape{
+    padding: 10px;
+    border-bottom: 2px solid #f6f8fa;
+   }
+  .register .stape span {
+    font-size: 20px;
+    color: #1bac91;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #e1f0ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+  }
+  .register .stape  div  .active{
+    background: #1bac91;
+    color: #fff;
+  }
+  .register  .form-group {
+    padding-bottom: 8px;
+  }
+  .error-message { 
+    color:  #ed3c0d;
+    text-align: left;
+    font-weight: 600;
+    
+  }
+  .register  .error-message br + br {
+    margin-top: 25px;
+  }
+  .register  .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .register  .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+  .register  .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+  }
+  .register  input {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  .register  input[type=text]  {
+    height: 44px
+  }
+  .register  textarea {
+    padding: 10px 12px;
+  }
+ button[type=submit] {
+    background: #1bac91;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+  }
+  button[type=submit]:hover {
+    background: #22d8b6;
+  }
+@media screen and (max-width: 768px){
+   
+     .register {
+         padding: 0px;
+         top: 8%;
+     }
+ }
+ @media screen and (max-width: 570px){
+    .register .container{
+        border-radius: inherit;
+    }
+ }
+  @-webkit-keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  

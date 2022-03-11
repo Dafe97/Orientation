@@ -1,32 +1,28 @@
-   @if (Route::has('login'))
+
+@if (Route::has('login'))
        @auth
-           <div id="auth" >
-                  <div >
+          <div id="auth" >
+                  <div class="dropdown">
                          <!-- Avatar -->
-                         <a
-                         class="dropdown dropdown-toggle d-flex align-items-center hidden-arrow"
-                         href="#"
-                         id="navbarDropdown"
-                         data-toggle="dropdown" 
-                         aria-haspopup="true" 
-                         aria-expanded="false" 
-                         role="button"
-                         v-pre>
-                         <img
-                             src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-                             class="rounded-circle"
-                             height="25"
-                             alt=""
-                             loading="lazy"
-                         />
-                         </a>
-                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"  >
+                         <a class="profil dropdown-toggle d-flex align-items-center "
+                            href="#"
+                            id="navbarDropdownMenuLink"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            >
+                               <img
+                                    src="{{asset(Auth::user()->profil)}}"
+                                    class="rounded-circle"
+                                    height="40"
+                                    alt="profil"
+                                    loading="lazy"
+                                />
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li>
-                                    <a class="dropdown-item" href="#">My profile</a>
+                                    <a class="dropdown-item" href="{{route('profil',Auth::user()->id)}}">profile <i class="bi bi-person-workspace"></i></a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Settings</a>
-                                </li>
+                                <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
@@ -34,7 +30,7 @@
                                         <a class="dropdown-item" href="route('logout')"
                                                 onclick="event.preventDefault();
                                                             this.closest('form').submit();">
-                                            {{ __('Log Out') }}
+                                            <i class="bi bi-box-arrow-left"></i> {{ __('Déconnecter') }} 
                                         </a>
                                     </form>
                                 </li>
@@ -45,28 +41,15 @@
             <nav id="navbar" class="navbar">
                <ul>
                     <li>
-                        <a class="nav-link scrollto  button-79"  href="{{ route('login') }}"  >se connecter</a>
+                        <a class="button-79"  href="{{ route('login') }}"  >se connecter</a>
                     </li>
                     @if (Route::has('register'))
                         <li>
-                            <a class="nav-link scrollto button-79"  href="{{ route('register') }}" >s'inscrir</a>
+                            <a class="button-79"  href="{{ route('register') }}" >inscription</a>
                         </li>
                     @endif
                </ul>
                <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
-      
        @endauth
    @endif
-     
- 
-   {{-- <nav id="navbar" class="navbar">
-    <ul>
-      <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-      <li><a class="nav-link scrollto" href="#about">About</a></li>
-      <li><a class="nav-link scrollto" href="#services">Services</a></li>
-      <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-      <li><a class="nav-link scrollto" href="#team">Team</a></li>
-    </ul>
-    <i class="bi bi-list mobile-nav-toggle"></i>
-  </nav> --}}

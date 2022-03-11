@@ -22,7 +22,7 @@ class RegisteredUserController extends Controller
     {
         return view('auth.register');
     }
-
+   
     /**
      * Handle an incoming registration request.
      *
@@ -33,7 +33,6 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-       
         $request->validate([
             'firstname' => ['required', 'string', 'max:45'],
             'lastname' => ['required', 'string', 'max:45'],

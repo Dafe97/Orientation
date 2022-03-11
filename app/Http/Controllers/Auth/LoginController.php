@@ -42,9 +42,20 @@ class LoginController extends Controller
         $this->request = $request;
     }
     public function login( ){
-       
-        if (Auth::attempt(['email' => $this->request->email, 'password' => $this->request->password])) {
-         return  redirect()->route('index');
+        $credentials = $this->request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $this->request->session()->regenerate();
+
+            return redirect()->intended('/');
         }
-    }
+
+        return back()->withErrors([
+            'email' => "Les informations d'identification fournies ne correspondent pas ",
+        ]);
+       
+    } 
 }

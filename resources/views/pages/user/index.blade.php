@@ -1,91 +1,40 @@
 @extends('layouts/app')
 @section('content')
-<section id="team">
-  <section id="team" class="team">
-    <div class="container">
-
-      <div class="section-title aos-init aos-animate" data-aos="fade-up">
-        <h2>Team</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div>
-
-      <div class="row">
-
-        <div class="col-xl-3 col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up">
-          <div class="member">
-            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
+      <div class="Instructor2__area pt-110 pb-90 text-center">
+        <div class="container Instructor2__width">
+            <div class="row">
+                <div class="col-xxl-7 offset-xxl-2 col-xl-7 offset-xl-2 col-lg-7 offset-lg-2">
+                    <div class="Instructor2__title-content text-center pb-30">
+                        <span class="Instructor2__pre-title">Nos utilisateurs</span>
+                        <h2 class="Instructor2__title">Meet our class Instructors</h2>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-          <div class="member">
-            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
+            <div class="row">
+                @foreach ($users as $user)
+                    <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-12 col-sm-12">
+                        <div class="Instructor2__content mb-30">
+                            <div class="Instructor2__content-1">
+                                <img src="{{$user->profil}}" alt="profil">
+                            </div>
+                            <div class="Instructor2__wrapper text-start">
+                                <div class="Instructor2__content-2">
+                                    <h4><a href="{{route("profil",$user->id)}}">{{$user->firstName}} {{$user->lastName}}</a></h4>
+                                    <p>{{$user->level}}</p>
+                                </div>
+                                <div class="Instructor2__content-3">
+                                <div>
+                                    <a href=""><i class="bi bi-twitter"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-          </div>
         </div>
-
-        <div class="col-xl-3 col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-          <div class="member">
-            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-          <div class="member">
-            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
     </div>
-  </section>
-  </section>
 @endsection

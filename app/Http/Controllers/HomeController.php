@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  App\Models\University;
+use  App\Models\Formation;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $universitys = University::All();
-        return view('pages.homes.index',compact("universitys"));
+        $universitys = University::get()->take(3);
+        $jobs = Formation::get()->take(2);
+        return view('pages.homes.index',compact("universitys","jobs"));
     }
 }

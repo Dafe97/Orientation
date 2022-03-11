@@ -17,6 +17,8 @@ class CreateFormationsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('contents');
+            $table->text('description');
+            $table->string('advice');
             $table->string('img');
             $table->timestamps();
         });

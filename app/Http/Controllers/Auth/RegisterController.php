@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\SessionController;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -41,7 +42,6 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -50,36 +50,60 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     { 
-        return Validator::make($data, [
-            'firstname' => ['required', 'string', 'max:45'],
-            'lastname' => ['required', 'string', 'max:45'],
-            'kind' => ['required', 'string', 'max:1'],
-            'level' => ['required', 'string', 'max:25'],
-            'faculty' => ['required', 'string', 'max:20'],
-            'phone' => ['required', 'string', 'max:20'],
-            'email' => ['required', 'string', 'email', 'max:45', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        $stape = SessionController::getSession("stape");
+        switch ($stape) {
+            case 1 : 
+               return Validator::make($data, [
+                        'firstname' => ['required', 'string','min:2', 'max:20'],
+                        'lastname' => ['required', 'string', 'min:2','max:20'],
+                        'kind' => ['required', 'string', 'max:1'],
+                        'level' => ['required', 'string'],
+                        'phone' => ['required', 'integer','unique:users'],
+                     ]);
+                break;
+            case 2: 
+               return Validator::make($data, [
+                        'faculty' => ['required', 'string', 'max:20'],
+                      ]);
+                break;
+            case 3: 
+                return Validator::make($data, [
+                            'email' => ['required', 'string', 'email', 'max:45', 'unique:users'],
+                            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+                        ]);
+                 break;
+            default:
+               echo('error');
+                break;
+        }
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\User
      */
     protected function create(array $data)
-    {
-        return User::create([
-            'firstname' => $data["firstname"],
-            'lastname' => $data["lastname"],
-            'kind' => $data["kind"],
-            'level' => $data["level"],
-            'faculty' => $data["faculty"],
-            'phone' => $data["phone"],
-            'email' => $data["email"],
-            'password' => Hash::make($data["password"])
-        ]);
+    {      
+        $data_session = Request()->session()->get("users");
+        if (Request()->session()->get('stape') == 3) {
+            $user = User::create([
+                'firstname' => $data_session[0]["firstname"],
+                'lastname' => $data_session[0]["lastname"],
+                'kind' => $data_session[0]["kind"],
+                'level' => $data_session[0]["level"],
+                'phone' => $data_session[0]["phone"],
+                'faculty' => $data_session[1]["faculty"],
+                'email' => $data["email"],
+                'password' => Hash::make($data["password"]),
+                'profil'  => "profile/user.png"
+            ]);
+            Request()->session()->increment('stape');
+            return $user;
+        }else{
+            Request()->session()->increment('stape');
+            Request()->session()->push('users',$data);
+        }
     }
 }
        
