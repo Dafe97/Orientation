@@ -22,7 +22,7 @@
 
       <!-- Google Fonts -->
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-      
+
       <!-- Vendor CSS Files -->
       <link href="{{asset("assets/vendor/aos/aos.css")}}" rel="stylesheet">
       <link href="{{asset("assets/vendor/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
@@ -35,8 +35,16 @@
       @yield('css')
     </head>
     <body>
+        <div class="loader-container">
+            <div class="loader">
+              <div id="left" class="ball"></div>
+              <div id="right" class="ball"></div>
+              <div id="up" class="ball"></div>
+              <div id="down" class="ball"></div>
+            </div>
+        </div>
         @include('layouts/partials/header')
-        
+
         <main>
            @yield('content')
         </main>
@@ -58,10 +66,13 @@
         <script src="{{ asset('js/app.js') }}"></script>
         <!-- Template Main JS File -->
         <script src="{{asset("assets/js/main.js")}}"></script>
-         <!--
-            mdb
+         <!-- Preload -->
+        <script>
+            $(".loader-container").attr('style','display : flex !important');
+            setTimeout(() => {
+              $(".loader-container").hide();
+            }, 1500);
+        </script>
 
-        -->
-       
     </body>
 </html>

@@ -20,8 +20,6 @@ class User extends \TCG\Voyager\Models\User
             'firstname',
             'lastname',
             'kind',
-            'level' ,
-            'faculty',
             'phone',
             'email',
             'password',

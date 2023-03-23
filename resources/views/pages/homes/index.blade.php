@@ -1,5 +1,5 @@
 
-@extends('layouts/app')
+@extends('layouts.app')
 @section('content')
     @include('layouts/partials/banner')
     <!-- ======== About Section ======== -->
@@ -23,7 +23,7 @@
                 <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-paste"></i>
                   <h4>Formation</h4>
-                  <p>Nous vous aiderons dans le choix des formations nécessaire pour votre 
+                  <p>Nous vous aiderons dans le choix des formations nécessaire pour votre
                     réussite</p>
                 </div>
                 <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
@@ -97,7 +97,7 @@
               </div>
             </div>
           </div>
-      </section><!-- End Features Section --> 
+      </section><!-- End Features Section -->
     --}}
 
     <!-- ======== Job Section ======== -->
@@ -163,7 +163,7 @@
           </div>
       </section>
     <!-- ======  End university Section ====== -->
-    
+
     <!-- ======== Testimonials Section ======== -->
       <section id="testimonials" class="testimonials">
           <div class="header-title">
@@ -174,25 +174,14 @@
                   <div class="swiper-wrapper">
                       <div class="swiper-slide">
                           <div class="testimonial-item">
-                              <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                              </p>
-                              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                              <h3>Saul Goodman</h3>
-                              <h4>Ceo &amp; Founder</h4>
-                          </div>
-                      </div><!-- End testimonial item -->
-                      <div class="swiper-slide">
-                          <div class="testimonial-item">
                             <p>
                               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                              Ce site est un meilleur choix pour une orientation des néo-bacheliers, gratuit et simple à utiliser. <br>
+                              avec un système de forum opérationnel
                               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                             <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                            <h3>Sara Wilsson</h3>
+                            <h3>Ali</h3>
                             <h4>Designer</h4>
                           </div>
                       </div><!-- End testimonial item -->
@@ -200,36 +189,39 @@
                           <div class="testimonial-item">
                             <p>
                               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                              Ce site est un meilleur choix pour une orientation des néo-bacheliers, gratuit et simple à utiliser. <br>
+                              avec un système de forum opérationnel
                               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                             <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
+                            <h3>Ali</h3>
+                            <h4>Camara</h4>
                           </div>
                       </div><!-- End testimonial item -->
                       <div class="swiper-slide">
                           <div class="testimonial-item">
                             <p>
                               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                              Ce site est un meilleur choix pour une orientation des néo-bacheliers, gratuit et simple à utiliser. <br>
+                              avec un système de forum opérationnel
                               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                             <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                            <h3>Matt Brandon</h3>
-                            <h4>Freelancer</h4>
+                            <h3>Ali </h3>
+                            <h4>Camara</h4>
                           </div>
                       </div><!-- End testimonial item -->
                       <div class="swiper-slide">
                           <div class="testimonial-item">
                             <p>
                               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                              Ce site est un meilleur choix pour une orientation des néo-bacheliers, gratuit et simple à utiliser. <br>
+                              avec un système de forum opérationnel
                               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                             <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                            <h3>John Larson</h3>
-                            <h4>Entrepreneur</h4>
+                            <h3>Ali</h3>
+                            <h4>Camara</h4>
                           </div>
                       </div><!-- End testimonial item -->
                   </div>
@@ -238,7 +230,7 @@
           </div>
       </section>
     <!-- =====  End Testimonials Section ====== -->
-      
+
     <!-- ======== Contact Section ======== -->
       <section  class="contact mb-0">
           <div class="container">
@@ -250,52 +242,143 @@
                       <div>
                           <div class="address">
                             <i class="bi bi-geo-alt"></i>
-                            <h4>Location:</h4>
-                            <p>A108 Adam Street, New York, NY 535022</p>
+                            <h4>Localisation:</h4>
+                            <p>Bamako, Mali</p>
                           </div>
 
                           <div class="email mt-4">
                             <i class="bi bi-envelope"></i>
                             <h4>Email:</h4>
-                            <p>info@example.com</p>
+                            <p>hello@oreintation.ml</p>
                           </div>
 
                           <div class="phone mt-4">
                             <i class="bi bi-phone"></i>
                             <h4>Call:</h4>
-                            <p>+1 5589 55488 55s</p>
+                            <p>+ 223 58 96 32 15</p>
                           </div>
                       </div>
                       <div>
                         <p class="mt-4">
-                          Contactez nous pour en savoir plus sur nous..
+                            Contactez-nous pour en savoir plus sur nous.
                         </p>
                       </div>
                   </div>
-                  <div class="col-lg-6 d-flex align-items-stretch form-message "> 
+                  <div class="col-lg-6 d-flex align-items-stretch form-message ">
                       <form action="{{route('contact.store')}}" method="post" role="form"  style="width: 100%" >
                           @csrf
                           @if (!auth()->check())
                             <div class="row">
                               <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Nom" required>
                               </div>
                               <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                               </div>
                             </div>
                           @endif
                           <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" required>
                           </div>
                           <div class="form-group mt-3">
                             <textarea class="form-control" name="contents" rows="5" placeholder="Message" required></textarea>
                           </div>
-                          <div class="text-right"><button type="submit" class="submit-contact">Send Message</button></div>
+                          <div class="text-right"><button type="submit" class="submit-contact">Envoyer</button></div>
                       </form>
                   </div>
               </div>
           </div>
       </section>
     <!--====== End Contact Section ====== -->
+    {{-- Test d'orientation --}}
+    <section class="modal-test"  id="app">
+      <div class="content-test">
+          <div class="close">x</div>
+          <div class="title">
+              <h1>test d'orientation</h1>
+              <p>
+                Ceci est un système d'orientation que nous avons mis en place pour permettre au néo bachelier de se situer en fonction de leur série quelle filière serait meilleur pour eux.                 <br>
+                Il est composé de deux parties :
+                 <br>
+                 <br>
+                  <span>
+                    Sélection de la  série
+                  </span>
+                  <br>
+                  <span>
+                      Choix de la filière
+                  </span>
+                 </ul>
+              </p>
+          </div>
+          <div class="description">
+            <h1 id="test-title">Sélection de la  série</h1>
+            <hr>
+            <div class="content">
+                <div id="sectors">
+                  @foreach ($sectors as $sector)
+                      <div class="sectorselected" data='{{ $sector->id_sectors }}'>
+                          {{ $sector->contents }}
+                          <button class="btn btn-primary btn-sm" spellcheck="false">+</button>
+                      </div>
+                  @endforeach
+                </div>
+            </div>
+          </div>
+      </div>
+    </section>
+@endsection
+@section('js')
+    <script>
+      $('#test-orient').on('click', function(e) {
+        $(".loader-container").attr('style','display : flex !important');
+          setTimeout(() => {
+            $(".loader-container").hide();
+            $('.modal-test').attr('style','display : flex !important');
+          }, 1500);
+      });
+    </script>
+    <script>
+      $('.close').on('click', function(e) {
+        $(".loader-container").attr('style','display : flex !important');
+          setTimeout(() => {
+            $(".loader-container").hide();
+            $('.modal-test').attr('style','display : none !important');
+          }, 1500);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      $('.sectorselected').on('click', function(e) {
+        var val =   $(this).attr('data');
+        axios.get('/test',{params: {sector: val}}).then(response => {
+            $(".loader-container").attr('style','display : flex !important');
+            setTimeout(() => {
+              $(".loader-container").hide();
+              // console.log(response.data);
+              $('#sectors .sectorselected').hide();
+              var data_results = response.data;
+              $('#test-title').text("Choix de la filière");
+              for (const element of data_results) {
+                console.log(element)
+                let div = document.createElement('div');
+                let span = document.createElement('span');
+                let link = document.createElement('a');
+                link.appendChild(document.createTextNode("Voir Plus"));
+                var url = "{{ route('sector',":id") }}";
+                url = url.replace(':id',element.id_unblocks);
+                link.href = url;
+                link.className = "btn btn-primary btn-test"
+                div.className = 'w-100';
+                console.log(element.id)
+                span.appendChild(document.createTextNode(element.title +" : "+ element.descripion))
+                document.getElementById('sectors').appendChild(div);
+                div.appendChild(span);
+                div.appendChild(link);
+              }
+            }, 1500);
+          });
+      });
+
+    </script>
 @endsection

@@ -19,7 +19,7 @@ class UniversityController extends Controller
     public function index()
     {
         $universitys = University::All();
-        return view("pages/university/index",compact('universitys'));
+        return view("pages.university.index",compact('universitys'));
     }
 
     /**

@@ -18,8 +18,6 @@ class CreateUsersTable extends Migration
             $table->string('firstName',20);
             $table->string('lastName',20);
             $table->enum('kind',['M','F']);
-            $table->enum('level',["Bachelier", "Etudiant"]);
-            $table->string('faculty');
             $table->string('phone');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

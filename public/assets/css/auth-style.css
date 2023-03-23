@@ -2,6 +2,8 @@
 /*------------------------------------------------------------
 # Login
 --------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+
 * {
     margin:0;
     padding:0;
@@ -13,6 +15,7 @@ body{
     background: #1bac91;color:white;
     border-radius: 3px;
     padding-top: 3px;
+    text-align: center;
 }
 .container-auth{
     position: relative;
@@ -79,7 +82,7 @@ body{
 # LOGO
 --------------------------------------------------------------*/
 .logo{
-  height: 70px;
+  height: 55px;
   transition: all 0.5s;
   z-index: 997;
   background: #000;
@@ -97,6 +100,9 @@ body{
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+.logo h1 span{
+  font-family: 'Akaya Kanadaka', cursive;
 }
 .logo h1::before{
   position: absolute;
@@ -138,7 +144,7 @@ body{
     background: #fff;
 }
 .register  .card{
-    padding: 30px;
+    /* padding: 30px; */
     margin-bottom: 0px;
     padding-bottom: 0px;
     width: 100%;
@@ -218,9 +224,9 @@ body{
     box-shadow: none;
     font-size: 14px;
   }
-  .register  input[type=text]  {
+  /* .register  input[type=text]  {
     height: 44px
-  }
+  } */
   .register  textarea {
     padding: 10px 12px;
   }

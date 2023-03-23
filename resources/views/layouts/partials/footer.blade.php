@@ -9,8 +9,8 @@
             <div class="footer-info">
               <h3>Orientation</h3>
               <p>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+                <strong>Phone:</strong> + 223 58 96 32 15<br>
+                <strong>Email:</strong> hello@oreintation.ml<br>
               </p>
               <div class="social-links mt-3">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -41,11 +41,8 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+            <h4>Localisation</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d973.2747934898663!2d-8.020484278630649!3d12.641498334463934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sml!4v1663932070618!5m2!1sfr!2sml" width="100%" height="120" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
 
         </div>

@@ -6,7 +6,7 @@
                 <div class="col-xxl-7 offset-xxl-2 col-xl-7 offset-xl-2 col-lg-7 offset-lg-2">
                     <div class="Instructor2__title-content text-center pb-30">
                         <span class="Instructor2__pre-title">Nos utilisateurs</span>
-                        <h2 class="Instructor2__title">Meet our class Instructors</h2>
+                        <h2 class="Instructor2__title"></h2>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                             <div class="Instructor2__wrapper text-start">
                                 <div class="Instructor2__content-2">
                                     <h4><a href="{{route("profil",$user->id)}}">{{$user->firstName}} {{$user->lastName}}</a></h4>
-                                    <p>{{$user->level}}</p>
+                                    {{-- <p>{{$user->level}}</p> --}}
                                 </div>
                                 <div class="Instructor2__content-3">
                                 <div>

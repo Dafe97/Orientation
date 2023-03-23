@@ -165,7 +165,7 @@
                                         </p>
                                     @else
                                         <p>
-                                            Votre statut est vide pour le moment....
+                                            Son statut est vide pour le moment....
                                         </p>
                                     @endif
                                     @if(Auth::id() == $user->id)
@@ -241,15 +241,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                         <h6 class="mb-0">Niveau</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        {{$user->level}}
-                                    </div>
-                                </div>
-                                <hr>
+                            
                                 @if (Auth::id() == $user->id)
                                     <div class="row">
                                         <div class="col-sm-12">

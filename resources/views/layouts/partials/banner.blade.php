@@ -5,6 +5,8 @@
       <h2>Orientation néo-bacheliers vous souhaite la bienvenue  </h2>
       @if (!auth()->check())
          <a href="{{ route('register') }}" class="btn-get-started scrollto">S'inscrir</a>
+      @else
+        <a id="test-orient" class="btn-get-started scrollto">Faite votre premier test ici</a>
       @endif
     </div>
   </section><!-- End Hero -->

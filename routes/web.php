@@ -32,6 +32,7 @@ Route::resource("/",HomeController::class);
 Route::get('/welcome', function () {
     return view('home');
 });
+Route::get("/test",[HomeController::class ,"test"])->name('test');
 
 Route::resource("/university",UniversityController::class)->middleware(['auth']);
 Route::resource("/test-orientation",OrientationController::class)->middleware(['auth']);

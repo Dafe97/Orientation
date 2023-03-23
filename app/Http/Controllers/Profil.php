@@ -16,7 +16,7 @@ class Profil extends Controller
     public function index($id)
     {
         $user = User::findOrFail($id);
-        return view('pages/profile/index',compact('user'));
+        return view('pages.profile.index',compact('user'));
     }
 
     /**
@@ -96,27 +96,27 @@ class Profil extends Controller
             
             if (!empty($request->web_url)) {
                 $request->validate([
-                    'web_url'   =>   ['string', 'max:255'],
+                    'web_url'   =>   ['string', 'max:255' ,'unique:users'],
                 ]);
             }
             if (!empty($request->github)) {
                 $request->validate([
-                    'github'    =>   ['string', 'max:255'],
+                    'github'    =>   ['string', 'max:255' ,'unique:users'],
                 ]);
             }
             if (!empty($request->twitter)) {
                 $request->validate([
-                    'twitter'   =>   ['string', 'max:255'],
+                    'twitter'   =>   ['string', 'max:255' ,'unique:users'],
                 ]);
             }
             if (!empty($request->instagram)) {
                 $request->validate([
-                    'instagram'   =>   ['string', 'max:255'],
+                    'instagram'   =>   ['string', 'max:255' ,'unique:users'],
                 ]);
             }
             if (!empty($request->facebook)) {
                 $request->validate([
-                    'facebook'   =>   ['string', 'max:255'],
+                    'facebook'   =>   ['string', 'max:255' ,'unique:users'],
                 ]);
             }
             $user = User::where('id',$user_id)->update([
@@ -128,7 +128,7 @@ class Profil extends Controller
             ]);
         }elseif($request->edit == "statut"){
             $request->validate([
-                'statut' => ['required', 'string', 'max:255','min:50'],
+                'statut' => ['required', 'string', 'max:255','min:20'],
             ]);
             $user_id = Auth::user()->id;
             $user = User::where('id',$user_id)->update([

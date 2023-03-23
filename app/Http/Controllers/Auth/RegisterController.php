@@ -50,32 +50,15 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     { 
-        $stape = SessionController::getSession("stape");
-        switch ($stape) {
-            case 1 : 
-               return Validator::make($data, [
-                        'firstname' => ['required', 'string','min:2', 'max:20'],
-                        'lastname' => ['required', 'string', 'min:2','max:20'],
-                        'kind' => ['required', 'string', 'max:1'],
-                        'level' => ['required', 'string'],
-                        'phone' => ['required', 'integer','unique:users'],
-                     ]);
-                break;
-            case 2: 
-               return Validator::make($data, [
-                        'faculty' => ['required', 'string', 'max:20'],
-                      ]);
-                break;
-            case 3: 
-                return Validator::make($data, [
-                            'email' => ['required', 'string', 'email', 'max:45', 'unique:users'],
-                            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-                        ]);
-                 break;
-            default:
-               echo('error');
-                break;
-        }
+        return Validator::make($data, [
+                 'firstname' => ['required', 'string','min:2', 'max:20'],
+                 'lastname' => ['required', 'string', 'min:2','max:20'],
+                 'kind' => ['required', 'string', 'max:1'],
+                 'phone' => ['required', 'integer','unique:users'],
+                 'email' => ['required', 'string', 'email', 'max:45', 'unique:users'],
+                 'password' => ['required', 'confirmed', Rules\Password::defaults()],
+              ]);
+               
     }
 
     /**
@@ -85,25 +68,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {      
-        $data_session = Request()->session()->get("users");
-        if (Request()->session()->get('stape') == 3) {
             $user = User::create([
-                'firstname' => $data_session[0]["firstname"],
-                'lastname' => $data_session[0]["lastname"],
-                'kind' => $data_session[0]["kind"],
-                'level' => $data_session[0]["level"],
-                'phone' => $data_session[0]["phone"],
-                'faculty' => $data_session[1]["faculty"],
+                'firstname' => $data["firstname"],
+                'lastname' => $data["lastname"],
+                'kind' => $data["kind"],
+                'phone' => $data["phone"],
                 'email' => $data["email"],
                 'password' => Hash::make($data["password"]),
                 'profil'  => "profile/user.png"
             ]);
-            Request()->session()->increment('stape');
             return $user;
-        }else{
-            Request()->session()->increment('stape');
-            Request()->session()->push('users',$data);
-        }
+        
     }
 }
        
